@@ -1,0 +1,262 @@
+* {
+  box-sizing: border-box;
+  font-family: "Roboto", "Noto Sans JP", sans-serif;
+}
+.msg-wrapper {
+  display: grid;
+  position: relative;
+  grid-template-columns: 240px 1fr;
+  gap: 40px;
+  padding-top: 20px;
+}
+
+/* Sidebar */
+.sidebar {
+  background: #f6f7f7;
+  width: 200px;
+  height: 300px;
+  border-radius: 14px;
+  margin-left: 55px;
+  padding: 20px;
+}
+
+.sidebar h3 {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0;
+}
+
+.sidebar li {
+  padding: 10px 0;
+  color: #777;
+  cursor: pointer;
+}
+
+.sidebar li.active {
+  color: #2c8f85;
+  font-weight: 600;
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+/* Card */
+.msg-card {
+  position: relative;
+  padding-bottom: 160px; /* reserve space for card-content */
+}
+
+.msg-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.msg-card-content {
+  position: absolute;
+  width:  300px;
+  height: 180px;
+  background: #fff;
+  padding: 18px;
+  margin-top: -40px;
+  margin-left: -20px;
+  border-radius: 16px;
+}
+
+.msg-card small {
+  color: #2c8f85;
+  width: 240px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.msg-card h4 {
+  font-size: 15px;
+  margin: 10px 0;
+  line-height: 1.6;
+}
+
+.msg-card .date {
+  color: #888;
+  font-size: 13px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .grid {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+      grid-template-columns: 1fr;
+  }
+  .grid {
+      grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 768px) {
+/* Main layout */
+.msg-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  padding: 20px;
+}
+
+/* Sidebar now moves below cards */
+.grid {
+  order: 1; /* cards first */
+  grid-template-columns: 1fr;
+  gap: 28px;
+}
+
+.sidebar {
+  display: block;
+  order: 2; /* sidebar after cards */
+  width: 100%;
+  padding: 16px;
+  margin-top: 20px;
+  margin-left: 0;
+}
+
+/* Card layout */
+.msg-card {
+  padding-bottom: 140px;
+}
+
+.msg-card img {
+  height: 200px;
+  border-radius: 14px;
+}
+
+/* White overlapping card */
+.msg-card-content {
+  position: absolute;
+  width: calc(100% - 32px);
+  left: -10px;
+  bottom: 10px;
+  margin: 0;
+  padding: 16px;
+  border-radius: 16px;
+}
+
+.msg-card small {
+  font-size: 11px;
+}
+
+.msg-card h4 {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.msg-card .date {
+  font-size: 12px;
+}
+}
+
+
+/* Full width light line */
+/* .edge-line {
+position: relative;
+left: 50%;
+margin-left: -50vw;
+
+width: 100vw;
+height: 2px;
+background: #d9d9d9;
+} */
+
+/* Small darker dash */
+/* .edge-line .edge-dash {
+position: absolute;
+left: 120px;   
+top: -1px;
+
+width: 60px;  
+height: 3px; 
+background: #666;
+} */
+#msgDetail {
+  max-width: 1100px;
+}
+
+.detail-hero img {
+  width: 55%;
+  border-radius: 24px;
+}
+
+.detail-content {
+  position: relative;
+  background: #fff;
+  padding: 40px;
+  border-radius: 45px;
+  margin-top: -260px;
+  margin-left: 280px;
+  width: 60%;
+  height: 330px;
+  z-index: 999;
+}
+.detail-content h2 {
+  font-size: 36px;
+  line-height: 1.5;
+  margin: 15px 0;
+}
+.detail-content h1 {
+  font-size: 28px;
+  line-height: 1.5;
+  margin: 15px 0;
+}
+.detail-content small {
+color: #2c8f85;
+font-size: 24px;
+font-weight: 800;
+}
+
+.detail-body {
+  line-height: 2;
+  margin-top: 30px;
+}
+
+#backBtn {
+display: block;           /* makes margin auto work */
+margin: 40px auto;        /* top & bottom = 40px, centered horizontally */
+padding: 12px 30px;
+border-radius: 40px;
+border: 1px solid #000;
+background: #fff;
+color: #000;
+cursor: pointer;
+transition: all 0.25s ease;
+}
+
+#backBtn:hover {
+background: #000;
+color: #fff;
+transform: translateY(-2px);
+}
+
+
+.detail-layout img {
+width: 60%;
+height: 100%;
+object-fit: cover;
+border-radius: 0 0 0 45px;
+margin-top: -21px;
+}
+#detail-text {
+white-space: pre-line;
+line-height: 1.9;
+}
