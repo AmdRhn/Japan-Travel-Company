@@ -24,15 +24,22 @@ body {
   z-index: 10;
 }
 .footer-bg {
+  z-index: -1;
+  position: relative;
 background: #f4f4f2;
 }
 .footer-legal-bg {
+  z-index: -1;  
+  position: relative;
 background: #000000;
 }
 /* PREVENT DESKTOP SHRINKING */
 @media (min-width: 769px) {
   body {
     min-width: 1210px;
+  }
+  .md-hide {
+    display: none !important;
   }
 }
 
@@ -41,7 +48,9 @@ background: #000000;
   body {
     min-width: 0;
   }
-
+  .sm-hide {
+    display: none !important  ;
+  }
   .site-wrapper {
     width: 100%;       /* responsive on mobile */
     padding: 0 0px;
@@ -349,6 +358,9 @@ body {
   .hero-content {
     width: 100%;
   }
+  .hero-image {
+    height: 100vh;
+  }
   .hero-image img {
     width: 100%;
     position: relative;
@@ -396,6 +408,7 @@ body {
 .mobile-menu {
   display: none;
 } 
+
 
 .hero {
   position: relative;
@@ -667,26 +680,35 @@ GROWTH
       margin-top: -300px;
       margin-left: 100px;          /* ✅ KEEP THIS */
       overflow: hidden;
-      max-width: 1210px;
+      width: 1210px;
       /* additional css */
       position: relative;
       z-index: 1;
+      cursor: grab;
       /* 🔴 LIMIT VISIBLE AREA TO 3 CARDS */
        ;               /* (350 * 3) + (24 * 2) */
     }
-
+    /* additional css */ 
+    /* .card-wrapper:active {
+      cursor: grabbing;
+    } */
     .card-wrapper-inner {
       display: flex;
-      gap: 24px;
+      /* gap: 24px; */
       transition: transform 0.4s ease;
     }
-
+    .swiper-slide {
+      /* additional css */
+      height: unset !important;
+    }
     .growth-card {
       min-width: 400px;
       min-height: 600px;
       background: #e0e0e0;
       border-radius: 20px;
       overflow: hidden;
+      /* additional css */
+      user-select: none;
     }
 
     .growth-card h1 {
@@ -698,6 +720,10 @@ GROWTH
       width: 100%;
       height: 200px;
       object-fit: cover;
+      /* additional css */
+      pointer-events: none;
+      user-select: none;
+      -webkit-user-drag: none;
     }
 
     .card-content {
@@ -719,8 +745,9 @@ GROWTH
 
     /* ===== BUTTONS ===== */
    .slider-nav{
-  margin-left:90%;
-  margin-top: 20px;
+    position: relative;
+  margin-left:91%;
+  margin-top: 30px;
   margin-bottom: 80px;
   display: flex;
 }
@@ -732,6 +759,12 @@ GROWTH
   border-radius: 4px;
   cursor: pointer;
 }
+.swiper-button-next:after,
+.swiper-button-prev:after{
+  font-size: 18px!important;
+  color: #008a7c;
+}
+
 
 .slider-nav .active {
   color: #008a7c;
@@ -808,6 +841,8 @@ GROWTH
     overflow-x: auto;
     overflow-y: hidden;
     margin-left: 30px;
+    max-width: 1210px;
+    width: unset;
     z-index: 1;
 
     -webkit-overflow-scrolling: touch;
@@ -3102,7 +3137,7 @@ overflow-x: visible;
   .nav {
     display: none;
   }
-
+  
   .mobile-menu-toggle {
     display: flex;
   }
