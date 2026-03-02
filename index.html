@@ -33,7 +33,7 @@
   </div>
 
   <div class="hero-content">
-    <img src="images/logo.svg" alt="Logo" />
+    <img src="images/logo.svg" alt="Logo" style="height: fit-content;" />
     <div class="scroll-vertical" onclick="scrollDown()">
       <span>SCROLL</span>
       <div class="line"></div>
@@ -158,8 +158,9 @@
                 世界がもっと好きになる、その第一歩をここから。
             </p>
             <div class="message-btn-wrap">
-            <a href="message.html" class="message-btn">
-                代表メッセージ <span>→</span>
+            <a href="message.html" class="message-btn" style="position: relative;">
+                代表メッセージ 
+                <span style="position: absolute; right: 16px; top: 50%; transform: translateY(-50%);">→</span>
             </a>
             </div>
 
@@ -205,7 +206,8 @@
 
           <!-- RIGHT CONTENT CARD -->
           <div class="travel-content">
-            <span class="jp-small">旅する心が<br />私たちの成長の原動力</span>
+            <span class="jp-small">旅する心が <br class="md-hide">
+              私たちの成長の原動力</span>
             <span class="en-small">Our Recent Travel</span>
 
             <h2>
@@ -218,8 +220,11 @@
               さまざまな旅を通して世界に触れています。
               新しい発見や出会いが、いつも私たちを次の旅へと動かします。
             </p>
-            <div class="btn-right">
-              <a href="recentTravel.html" class="travel-btn">最近の旅行先を見る →</a>
+            <div class="btn-right" >
+              <a href="recentTravel.html" style="position: relative;" class="travel-btn">最近の旅行先を見る 
+              <span style="position: absolute; right: 16px; top: 50%; transform: translateY(-50%);">→</span>
+
+              </a>
             </div>
 
             <!-- <a href="#" class="travel-btn">
@@ -414,7 +419,10 @@
                 <button class="scroll-btn right" aria-label="Scroll right">›</button>
                 </div>
                 <div class="btn-center-3">
-                <a href="#" class="outline-btn">私たちが選ばれる理由 →</a>
+                <a href="#" class="outline-btn" style="padding: 10px 40px !important;">私たちが選ばれる理由 
+      <span class="arrow" style="position: absolute; right: 16px; top: 48%; transform: translateY(-50%);">→</span>
+
+                </a>
                 </div>
 
       </section>
@@ -476,9 +484,16 @@
 
                 <!-- BOTTOM BUTTON -->
                 <div class="achievement-bottom-btn">
-                <a href="#" class="outline-btn">
-                    もっと見る <span class="arrow-down">↓</span>
+                <a href="#" class="outline-btn" style="position: relative;">
+                    もっと見る 
+                    <span class="arrow sm-hide" style="position: absolute; right: 16px; top: 48%; transform: translateY(-50%);">↓</span>
+                     <span class="arrow-down md-hide" style="position: absolute; right: 20px ;top: 13.5px;">
+                      <svg width="16" height="12" viewBox="0 0 21 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20.3535 0.353516L10.3535 10.3535L0.353516 0.353516" stroke="black"/>
+                      </svg>
+                    </span>
                 </a>
+                
                 </div>
 
             </div>
@@ -885,10 +900,10 @@
               </div>
 
               <!-- NAVIGATION -->
-              <div class="slider-nav md-hide">
-              <button id="prev" >‹</button>
-              <button id="next" >›</button>
-              </div>
+              <div class="scroll-controls" style="padding: 16px;">
+            <button class="scroll-btn left" aria-label="Scroll left">‹</button>
+            <button class="scroll-btn right" aria-label="Scroll right">›</button>
+            </div>
 
         </section>
 
@@ -919,15 +934,19 @@
       </div>
     </div>
 
-    <button class="service-btn">
-      詳しく見る <span class="arrow">→</span>
+    <button class="service-btn" style="position: relative; width: fit-content;">
+      詳しく見る 
+      <span class="arrow" style="position: absolute; right: 16px; top: 48%; transform: translateY(-50%);">→</span>
+
     </button>
   </div>
           </section>
 
 
           <!-- PRESS release -->
-
+  <div class="edge-line" style="margin-top: 0px !important;margin-bottom: 0px !important;">
+    <span class="edge-dash"></span>
+    </div>
             <section class="press-wrapper">
                 <section class="pr-section">
                   <div class="inner">
@@ -938,8 +957,8 @@
                         <span class="pr-label">Press Release</span>
                         <h2 class="pr-heading">プレスリリース</h2>
 
-                        <button class="pr-viewall-btn">
-                        すべて見る <span>→</span>
+                        <button class="pr-viewall-btn sm-hide" style="position: relative;">
+                        すべて見る <span class="arrow" style="position: absolute; right: 16px; top: 48%; transform: translateY(-50%);">→</span>
                         </button>
                     </aside>
 
@@ -978,10 +997,15 @@
 
                     </div>
 
-
+                 
                     </div>
+                        
                   </div>
+                  
                 </section>
+                 <button class="pr-viewall-btn md-hide" style="position:relative; display:flex; width: fit-content; margin-top: 40px; margin:40px auto 0px;">
+                        すべて見る <span class="arrow" style="position: absolute; right: 16px; top: 48%; transform: translateY(-50%);">→</span>
+                        </button>
             </section>
             
     </main>
@@ -1016,8 +1040,9 @@
             </div>
 
             <div class="footer-certifications">
-              <img src="images/iata-logo.png">
               <img src="images/jata-logo.png">
+              <img src="images/iata-logo.png">
+
               <img src="images/security-metrices-logo.png">
             </div>
           </div>
@@ -1050,7 +1075,7 @@
                   <li><a href="#r">メルマガ会員登録／解除</a></li>
                 </ul>
               </div>
-
+                
               <div class="footer-menu">
                 <div class="footer-separator"></div>
                 <h3>私たちについて</h3>
@@ -1066,6 +1091,7 @@
                 </ul>
               </div>
             </div>
+                <div class="footer-separator"></div>
 
               <div class="footer-socials">
                 <a class="social facebook"><i class="fab fa-facebook-f"></i></a>
@@ -1352,7 +1378,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-<script>
+<!-- <script>
 document.addEventListener("DOMContentLoaded", () => {
   if (window.innerWidth > 768) return;
 
@@ -1366,16 +1392,88 @@ document.addEventListener("DOMContentLoaded", () => {
     const imgRect = img.getBoundingClientRect();
 
     const gap = 12;
-
     const targetTop = imgRect.top - jpRect.height - gap;
     const moveY = targetTop - jpRect.top;
 
-    jp.style.transition = "transform 2s cubic-bezier(0.25,1,0.5,1)";
-    jp.style.transform = `translateY(calc(-50% + ${moveY}px))`;
+    // ✅ use CSS variable instead of overwriting transform
+    jp.style.setProperty("--jp-dy", `${moveY}px`);
+    jp.classList.add("move-vertical");
 
   }, 2000);
 });
+</script> -->
+
+<!-- SCROLL CONTROLS FOR BOTTOM CARDS & CARD WRAPPER -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  // Find all scroll control containers
+  const scrollControlGroups = document.querySelectorAll(".scroll-controls");
+
+  scrollControlGroups.forEach((controls) => {
+    let cardContainer = null;
+    let section = controls.closest("section");
+
+    // First, try to find in the same section
+    if (section) {
+      // For growth section, specifically look for the mobile card-wrapper
+      if (section.classList.contains("growth-section")) {
+        cardContainer = section.querySelector(".card-wrapper.md-hide");
+      } else {
+        // For why-choose sections, look for bottom-cards
+        cardContainer = section.querySelector(".bottom-cards") || 
+                        section.querySelector(".bottom-cards-left");
+      }
+    }
+
+    // Fallback: search for previous sibling
+    if (!cardContainer) {
+      let current = controls.previousElementSibling;
+      while (current) {
+        if (current.nodeType === 1) { // Element nodes only
+          if (current.classList.contains("bottom-cards") || 
+              current.classList.contains("bottom-cards-left") ||
+              current.classList.contains("card-wrapper")) {
+            cardContainer = current;
+            break;
+          }
+        }
+        current = current.previousElementSibling;
+      }
+    }
+
+    if (!cardContainer) {
+      console.log("No scrollable container found for:", controls);
+      return;
+    }
+
+    const leftBtn = controls.querySelector(".scroll-btn.left");
+    const rightBtn = controls.querySelector(".scroll-btn.right");
+
+    if (!leftBtn || !rightBtn) return;
+
+    // Adjust scroll amount based on container type
+    const isCardWrapper = cardContainer.classList.contains("card-wrapper");
+    const scrollAmount = isCardWrapper ? 300 : 220;
+
+    leftBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      cardContainer.scrollBy({
+        left: -scrollAmount,
+        behavior: "smooth"
+      });
+    });
+
+    rightBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      cardContainer.scrollBy({
+        left: scrollAmount,
+        behavior: "smooth"
+      });
+    });
+  });
+});
 </script>
+
 <!-- <script>
 document.addEventListener("DOMContentLoaded", () => {
   const messageSection = document.querySelector(".message-section");

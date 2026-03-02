@@ -499,7 +499,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  padding: 16px 36px;
+  padding: 10px 56px;
   border: 1px solid #000;
   border-radius: 999px;
   text-decoration: none;
@@ -541,7 +541,7 @@ body {
   }
 
   .message-btn {
-    padding: 12px 24px; /* smaller button padding */
+    padding: 10px 44px; /* smaller button padding */
     font-size: 13px;
     gap: 8px;
   }
@@ -553,7 +553,7 @@ body {
 
 .achievement-section {
   width: 100%;
-  padding: 80px 0 120px;
+  padding: 0px 0 120px;
   background: #fff;
   position: relative;
   font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
@@ -995,7 +995,7 @@ SERVICE
       display: flex;
       align-items: center;
       gap: 12px;
-      padding: 14px 28px;
+      padding: 10px 58px;
       border-radius: 999px;
       border: 1px solid #000;
       background: #fff;
@@ -1090,8 +1090,9 @@ SERVICE
       position: relative;
       width: 100vw;
       margin-left: calc(-50vw + 50%);
-      border-top: 1px solid #999;
+      /* border-top: 1px solid #999; */
       border-bottom: 1px solid #999;
+      overflow: hidden;
     } 
     .pr-section .inner {
       width: 1210px;
@@ -1128,7 +1129,7 @@ SERVICE
       align-items: center;
       margin-top: -20px;
       gap: 24px;
-      padding: 10px 38px; 
+      padding: 10px 58px; 
       border: 1px solid #000;
       border-radius: 999px;
       background: #fff;
@@ -1200,11 +1201,24 @@ SERVICE
       grid-template-columns: 1fr 60px;
       align-items: center;
       padding: 32px 40px;
-      border-bottom: 1px solid #999;
+      border-bottom: none;
+      position: relative;
     }
 
-    .pr-row:last-child {
-      border-bottom: none;
+    /* Full-width border using pseudo-element */
+    .pr-row::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+
+      width: 100vw;
+      height: 1px;
+      background: #999;
+      pointer-events: none;
+    }
+
+    .pr-row:last-child::after {
+      display: none;
     }
 
     /* DATE + TITLE */
@@ -1297,7 +1311,7 @@ SERVICE
 
   .pr-viewall-btn {
     margin-top: 0;
-    padding: 10px 26px;
+    padding: 10px 56px;
     font-size: 13px;
     gap: 14px;
   }
@@ -1310,7 +1324,26 @@ SERVICE
   /* ROW */
   .pr-row {
     grid-template-columns: 1fr 40px;
-    padding: 18px 16px;
+    padding: 18px 22px;
+    border-bottom: none;
+    position: relative;
+  }
+
+  /* Full-width border on mobile */
+  .pr-row::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 1px;
+    background: #ddd;
+    pointer-events: none;
+  }
+
+  .pr-row:last-child::after {
+    display: none;
   }
 
   /* DATE + TITLE */
@@ -1354,7 +1387,7 @@ SERVICE
 .footer-page-top {
   position: absolute;
   top: 0%;
-  right: 40px;
+  right: 0px;
   background: #e6e6e4;
   padding: 10px 18px;
   border-radius: 8px;
@@ -1414,7 +1447,7 @@ SERVICE
 /* RIGHT */
 .footer-navigation {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.6fr 1fr;
   gap: 60px;
 }
 /* Only first menu list -> 2 columns */
@@ -1457,11 +1490,13 @@ SERVICE
   position: absolute;
   left: 0;
   color: #2a8f7b;
+ font-size: 20px;
+  border-radius: 50%;
 }
 
 /* DIVIDER */
 .footer-separator {
-  width: 80%;
+  width: 100%;
   border-top: 1px solid #ccc;
   margin: 22px 0;
 }
@@ -1515,7 +1550,7 @@ SERVICE
   .footer-page-top {
     background: white;
     height: 60px;
-    right: 0;
+    right: 16px;
     width: 70px;
     margin-top: 95px;
     justify-content: center;
@@ -1603,7 +1638,7 @@ SERVICE
 
   /* SEPARATOR */
   .footer-separator {
-    width: 90%;
+    width: 100%;
     margin: 24px 0;
   }
 
@@ -1612,6 +1647,7 @@ SERVICE
   display: inline-flex;        /* prevents full width */
   gap: 16px;
   margin-top: 24px;
+  justify-content: center;
 }
 
 .footer-socials .social {
@@ -1642,8 +1678,6 @@ SERVICE
     margin-right: 16px;
   }
 }
-
-
 
 /* =========================
    TIMELINE
@@ -1678,7 +1712,7 @@ SERVICE
 .timeline-date {
   font-size: 14px;
   color: #999;
-  text-align: right;
+  text-align: left;
   padding-right: 20px;
   white-space: nowrap;
 }
@@ -1720,8 +1754,9 @@ SERVICE
 ========================= */
 
 .outline-btn {
+  position: relative;
   margin-bottom: 60px;
-  width: 240px;
+  /* width: 240px; */
   display: inline-flex;
   align-items: center;
   /* additional css */
@@ -1729,7 +1764,7 @@ SERVICE
   
   text-align: center;
   gap: 10px;
-  padding: 12px 40px;
+  padding: 10px 58px;
   border: 1px solid #000;
   border-radius: 999px;
   text-decoration: none;
@@ -1745,7 +1780,7 @@ SERVICE
 
 /* Bottom Button */
 .achievement-bottom-btn {
-  margin-top: 64px;
+  margin-top: 0px;
   display: flex;
   justify-content: center;
 }
@@ -1766,12 +1801,12 @@ SERVICE
   .timeline::before {
     content: "";
     position: absolute;
-    height: 82%;
+    height: 85%;
     left: 104px;
-    top: 6px;              /* start from first dot */
+    top: -24px;              /* start from first dot */
     bottom: 10px;
     width: 1px;
-    background: #dcdcdc;
+    background: #000000;
   }
 
   .timeline-item {
@@ -1788,7 +1823,7 @@ SERVICE
     font-size: 14px;
     font-weight: 500;
     color: #9a9a9a;
-    text-align: right;
+    text-align: left;
     line-height: 1.4;
   }
 
@@ -1903,7 +1938,7 @@ SERVICE
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 14px 30px;
+  padding: 10px 40px;
   border: 1px solid #000;
   border-radius: 999px;
   text-decoration: none;
@@ -1993,13 +2028,18 @@ SERVICE
   }
 
   .travel-btn {
-    padding: 12px 24px;
+    padding: 10px 44px;
     font-size: 13px;
   }
 
   .btn-right {
     justify-content: center; /* center button on mobile */
   }
+  .carsoule-portion{
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin-top: 0px!important;
+}
 }
 
 
@@ -2064,7 +2104,7 @@ SERVICE
 
 .section-one{
   background: #ffffff;
-  padding: 200px 0px 0px 60px;
+  padding: 0px 0px 0px 60px;
   overflow-x: visible;
  
 }
@@ -2072,12 +2112,13 @@ SERVICE
   background: #ffffff;
  padding: 0px 0px 0px 60px;
 overflow-x: visible;
- 
+ margin-top:-120px;
 }
 .section-three{
   background: #ffffff;
  padding: 30px 0px 0px 60px;
 overflow-x: visible;
+ margin-top:-60px;
  
 }
 
@@ -2113,6 +2154,7 @@ overflow-x: visible;
   width: 1100px;
   height: 550px;
   margin-left:auto;
+  margin-top: 4%;
 }
 .main-card::after {
   content: "";
@@ -2149,7 +2191,7 @@ overflow-x: visible;
 /* Big number */
 .count {
   position: absolute;
-  top: -60px;
+  top: -43px;
   left: 500px;
   font-size: 120px;
   font-weight: 200;
@@ -2158,16 +2200,16 @@ overflow-x: visible;
 }
 .count-left {
   position: absolute;
-  top: -60px;
-  left: 150px;
+  top: -43px;
+  left: 70px;
   font-size: 120px;
   font-weight: 200;
   color: #000;
 }
 .count-3 {
   position: absolute;
-  top: -50px;
-  left: 100px;
+  top: -43px;
+  left: 60px;
   font-size: 120px;
   font-weight: 200;
   color: #000;
@@ -2296,6 +2338,7 @@ overflow-x: visible;
 }
 .btn-center-3 {
   text-align: center;
+  margin-top: -100px;
 }
 .scroll-controls {
   display: none;
@@ -2308,7 +2351,9 @@ overflow-x: visible;
   .section-three {
     padding: 40px 16px 0 16px;
   }
-
+  .section-two,.section-three {
+    margin-top: 0px;
+  }
   /* MAIN CARD */
   .main-card,
   .main-card-left {
@@ -2359,10 +2404,11 @@ overflow-x: visible;
     position: absolute;
     top: -40px;
     left: 16px;
-    font-size: 64px;
-    font-weight: 700;
+    font-size: 100px;
+    font-weight: 500;
     color: #000;
     z-index: 2;
+    letter-spacing: -10.94%;
   }
 
   /* CONTENT */
@@ -2393,7 +2439,9 @@ overflow-x: visible;
   }
 
   .bottom-cards::-webkit-scrollbar,
-  .bottom-cards-left::-webkit-scrollbar {
+  .bottom-cards-left::-webkit-scrollbar,
+  .card-wrapper::-webkit-scrollbar 
+   {
     display: none;
   }
 
@@ -2422,6 +2470,10 @@ overflow-x: visible;
     top: 0;
     left: 0;
   }
+  .btn-center-3 {
+  text-align: center;
+  margin-top: 0px;
+}
 }
 @media (max-width: 768px) {
 
@@ -3180,7 +3232,7 @@ overflow-x: visible;
   }
 
   .hero-content {
-    right: 5%;
+    right: 4%;
   }
 
   .hero-subtitle {
@@ -3306,10 +3358,16 @@ overflow-x: visible;
 
 .edge-line .edge-dash {
   position: absolute;
-  left: calc((100vw - 1210px) / 2 + 120px);
+  left: calc((100vw - 1210px) / 2 + 60px) !important;
   top: -1px;
   width: 60px;
   height: 3px;
   background: #666;
+}
+
+@media (max-width: 768px) {
+  .edge-line .edge-dash {
+    left: 20px !important;
+  }
 }
 
