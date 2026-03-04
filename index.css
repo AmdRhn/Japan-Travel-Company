@@ -357,9 +357,13 @@ body {
   .hero-image,
   .hero-content {
     width: 100%;
+
   }
   .hero-image {
     height: 100vh;
+    max-height: 1060px;
+    
+
   }
   .hero-image img {
     width: 100%;
@@ -1077,6 +1081,9 @@ SERVICE
     font-size: 14px;
     justify-content: center;
   }
+  .jp-text.move-vertical {
+  transform: translateY(calc(-50% + var(--jp-dy)));
+}
 }
 
 
@@ -1098,6 +1105,7 @@ SERVICE
       width: 1210px;
       margin: 0 auto;
     }
+
 
 
 

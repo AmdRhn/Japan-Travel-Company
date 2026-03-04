@@ -1118,7 +1118,102 @@
       </div>
     </div>
   </div>
+  <!-- <script>
+window.addEventListener("load", () => {
+  document.body.classList.add("no-scroll");
 
+  const jpText = document.querySelector(".jp-text");
+  const heroImage = document.querySelector(".hero-image");
+  const heroContent = document.querySelector(".hero-content");
+  const brand = document.querySelector(".brand");
+  const scroll = document.querySelector(".scroll-vertical");
+  const scrollLine = document.querySelector(".scroll-vertical .line");
+
+  const isSP = window.innerWidth <= 768;
+
+  // =============================
+  // STEP ① — quick soft fade
+  // =============================
+  setTimeout(() => {
+    jpText.style.opacity = "1";
+    brand.style.opacity = "1";
+  }, 100);
+
+  // pause so text is readable (~ total 2s with fade)
+  setTimeout(() => {
+
+    // =============================
+    // STEP ② — move text + fade visuals
+    // =============================
+
+    if (isSP) {
+      // 📱 mobile = vertical move
+      jpText.style.transform =
+        "translate3d(-50%, calc(-50% + 80px), 0)";
+    } else {
+      // 🖥 desktop = horizontal move
+      jpText.classList.add("move-horizontal");
+    }
+
+    heroImage.style.opacity = "1";
+    heroContent.style.opacity = "1";
+
+  }, 2000); // ← matches client spec
+
+  // =============================
+  // STEP ③ — scroll indicator
+  // =============================
+  setTimeout(() => {
+    document.body.classList.remove("no-scroll");
+    scroll.style.opacity = "1";
+    scrollLine.style.transform = "scaleY(1)";
+  }, 4200);
+    
+});
+</script> -->
+      <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script> -->
+      <!-- <script>
+window.addEventListener("load", () => {
+  const tl = gsap.timeline();
+
+  // STEP ① — soft quick fade in
+  tl.to([".jp-text", ".hero-content img","brand"], {
+    opacity: 1,
+    duration: 0.8,
+    ease: "power2.out",
+    stagger: 0.15
+  })
+
+  // small readable pause
+  .to({}, { duration: 1.2 })
+
+  // STEP ② — text moves + image/logo fade
+  .to(".jp-text", {
+    x: 120, // 🔧 adjust to match design
+    duration: 2,
+    ease: "power2.inOut"
+  }, "<")
+
+  .to(".hero-image", {
+    opacity: 1,
+    duration: 2,
+    ease: "power2.out"
+  }, "<")
+
+  .to(".hero-content img", {
+    opacity: 1,
+    duration: 2,
+    ease: "power2.out"
+  }, "<")
+
+  // STEP ③ — scroll indicator appears
+  .to(".scroll-vertical", {
+    opacity: 1,
+    duration: 0.8,
+    ease: "power2.out"
+  });
+});
+</script> -->
     <!-- <script src="index.js"></script> -->
   </body>
 </html>
@@ -1312,7 +1407,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ============================== */
     if (heroImage) heroImage.style.opacity = 1;
     if (heroContent) heroContent.style.opacity = 1;
-    if (jpText) jpText.classList.add("move-horizontal");
+    // if (jpText) jpText.classList.add("move-horizontal");
 
   }, 2000);
 
@@ -1331,12 +1426,13 @@ document.addEventListener("DOMContentLoaded", () => {
   setTimeout(() => {
     if (scroll) scroll.style.opacity = 1;
     document.body.classList.remove("no-scroll");
-  }, 4200);
+  }, 4400);
 });
 </script>
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
+  // if (window.innerWidth <= 768) return;
   const jpText = document.querySelector(".jp-text");
   const hero = document.querySelector(".hero");
   const heroContentImg = document.querySelector(".hero-content img");
@@ -1373,12 +1469,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     hero.appendChild(jpText);
   }, 4000);
+    window.addEventListener("resize", () => location.reload());
 });
 </script>
 
 
 
-<!-- <script>
+<script>
 document.addEventListener("DOMContentLoaded", () => {
   if (window.innerWidth > 768) return;
 
@@ -1401,7 +1498,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   }, 2000);
 });
-</script> -->
+</script>
 
 <!-- SCROLL CONTROLS FOR BOTTOM CARDS & CARD WRAPPER -->
 <script>
