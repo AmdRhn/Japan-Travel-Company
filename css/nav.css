@@ -12,10 +12,9 @@ body {
 
 /* NAV CONTAINER */
 .hero-nav {
- width: 75vw;                   /* always 70% of screen width */
  max-width: 100%;
  margin-left: auto;             /* push to right */
- 
+ opacity: 0;
  display: flex;
  align-items: center;
  justify-content: flex-start;
@@ -137,8 +136,8 @@ body {
  /* HAMBURGER BUTTON */
  .mobile-hamburger {
    position: fixed;
-   width: 62px;
-   height: 62px;
+   width: 44px;
+   height: 44px;
    top: 20px;
    
    background: #000;
@@ -147,12 +146,12 @@ body {
    display: flex;
    flex-direction: column;
    justify-content: center;
-   gap: 6px;
+   gap: 5px;
  }
  .mobile-close-btn {
    position: fixed;
-   width: 62px;
-   height: 62px;
+   width: 44px;
+   height: 44px;
    top: 20px;
    
    background: #000;
@@ -163,8 +162,12 @@ body {
    justify-content: center;
    gap: 6px;
  }
+ .mobile-close-btn svg{
+  width: 44px;
+  height: 44px;
+ }
  .mobile-hamburger span {
-   width: 24px;
+   width: 22px;
    height: 2px;
    background: #fff;
    margin: 0 auto;
@@ -204,7 +207,7 @@ body {
 }
 
 .mobile-menu li {
- font-size: 22px;
+ font-size: 16px;
  padding-top: 16px ;
  padding-bottom: 24px;
  border-bottom: 1px solid black ;
