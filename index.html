@@ -16,6 +16,7 @@
      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
       <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   </head>
   <body>
 
@@ -29,14 +30,14 @@
   <p class="jp-text">あなたと旅のあいだに。</p>
 
   <div class="hero-image">
-    <img src="images/hero.png" />
+    <img src="images/hero.png " />
   </div>
 
   <div class="hero-content">
     <img src="images/logo.svg" alt="Logo" style="height: fit-content;" />
     <div class="scroll-vertical" onclick="scrollDown()">
-      <span>SCROLL</span>
-      <div class="line"></div>
+     <span class="text">SCROLL</span> 
+      <span class="scroll-line" ></span>
     </div>
   </div>
 </header>
@@ -143,19 +144,27 @@
 
             <div class="message-text">
             <p>
-                はじめて降り立つ街の風が、あなたの感情をそっと動かす。
-                 <br />いつもと違う空、見慣れない文字、聞き慣れない言葉—
-                そのすべてが、新しい自分への扉を開いてくれる。
+                はじめて降り立つ街の風が、<br class="md-hide">
+                あなたの感情をそっと動かす。<br />
+                いつもと違う空、見慣れない文字、<br class="md-hide">
+                 聞き慣れない言葉—そのすべてが、<br class="md-hide">
+                 新しい自分への扉を開いてくれる。<br class="md-hide">
             </p>
             <p>
-                名前も知らなかった国が、気づけば大切な思い出の一部になっている。<br />
-                何気ない出会いや、ふとした風景が、心の奥に残り続ける。<br />
-                一歩踏み出すたびに、世界が少しずつ「好き」になっていく旅。
+                名前も知らなかった国が、<br class="md-hide">
+                気づけば大切な思い出の一部になっている。<br />
+                何気ない出会いや、<br class="md-hide">
+                ふとした風景が、心の奥に残り続ける。<br />
+                一歩踏み出すたびに、<br class="md-hide">
+                世界が少しずつ「好き」になっていく旅。
             </p>
             <p>
-                それはただの移動ではなく、人生を豊かにする体験です。<br />
-                あなたにとって、そんな「かけがえのない瞬間」と出会う旅を。<br />
-                世界がもっと好きになる、その第一歩をここから。
+                それはただの移動ではなく、<br class="md-hide">
+                人生を豊かにする体験です。<br />
+                あなたにとって、<br class="md-hide">
+                そんな「かけがえのない瞬間」と出会う旅を。<br />
+                世界がもっと好きになる、<br class="md-hide">
+                その第一歩をここから。<br class="md-hide">
             </p>
             <div class="message-btn-wrap">
             <a href="message.html" class="message-btn" style="position: relative;">
@@ -203,14 +212,14 @@
               alt="Travel"
             />
           </div>
-
+          
           <!-- RIGHT CONTENT CARD -->
           <div class="travel-content">
             <span class="jp-small">旅する心が <br class="md-hide">
               私たちの成長の原動力</span>
             <span class="en-small">Our Recent Travel</span>
 
-            <h2>
+            <h2 style="font-weight:400;">
               私たちの<br />
               最近の旅行先
             </h2>
@@ -231,6 +240,7 @@
                     最近の旅行先を見る <span>→</span>
                 </a> -->
           </div>
+
         </div>
       </section>
       <section class="carsoule-portion">
@@ -306,10 +316,16 @@
                 <div class="arrow">→</div>
                 </div>
             </div>
-            <div class="scroll-controls">
-            <button class="scroll-btn left" aria-label="Scroll left">‹</button>
-            <button class="scroll-btn right" aria-label="Scroll right">›</button>
-            </div>
+            <!--  -->
+            
+          <div style="display: flex; width: 100%; justify-content: flex-end; ">
+
+             <div class="control-box md-hide scroll-controls">
+                <div class="icon arrow-left scroll-btn left" id="prev">&lt;</div>
+                <div class="icon divider">|</div>
+                <div class="icon arrow-right scroll-btn right" id="next">&gt;</div>
+              </div>
+                </div>
 
       </section>
       <section class="section-two">
@@ -360,10 +376,14 @@
                     <div class="arrow">→</div>
                 </div>
           </div>
-                <div class="scroll-controls">
-                    <button class="scroll-btn left" aria-label="Scroll left">‹</button>
-                    <button class="scroll-btn right" aria-label="Scroll right">›</button>
-                </div>
+          <div style="display: flex; width: 100%; justify-content: flex-end; ">
+
+                <div class="control-box md-hide scroll-controls">
+                <div class="icon arrow-left scroll-btn left" id="prev">&lt;</div>
+                <div class="icon divider">|</div>
+                <div class="icon arrow-right scroll-btn right" id="next">&gt;</div>
+              </div>
+          </div>
 
       </section>
       <section class="section-three">
@@ -414,13 +434,17 @@
                     <div class="arrow">→</div>
                 </div>
             </div>
-                <div class="scroll-controls">
-                <button class="scroll-btn left" aria-label="Scroll left">‹</button>
-                <button class="scroll-btn right" aria-label="Scroll right">›</button>
-                </div>
+          <div style="display: flex; width: 100%; justify-content: flex-end; ">
+
+                <div class="control-box md-hide scroll-controls">
+                <div class="icon arrow-left scroll-btn left" id="prev">&lt;</div>
+                <div class="icon divider">|</div>
+                <div class="icon arrow-right scroll-btn right" id="next">&gt;</div>
+              </div>
+              </div>
                 <div class="btn-center-3">
-                <a href="#" class="outline-btn" style="padding: 10px 40px !important;">私たちが選ばれる理由 
-      <span class="arrow" style="position: absolute; right: 16px; top: 48%; transform: translateY(-50%);">→</span>
+                <a href="#" class="outline-btn" >私たちが選ばれる理由 
+      <span class="arrow" style="position: absolute; right: 16px; top: 50%; transform: translateY(-50%);">→</span>
 
                 </a>
                 </div>
@@ -506,28 +530,34 @@
                 <div class="growth-inner">
 
                 <!-- Left -->
-                <div class="growth-left">
+                  <div style="display: flex;flex-direction: column;">
+
                     <p class="subtitle">Growth System</p>
+
+                <div class="growth-left" >
                     <h2>
                     旅行好きが<br />
                     成長できる仕組み
                     </h2>
-                </div>
-                <!-- Right -->
-                <div class="growth-right">
+                     <div class="growth-right">
                     <p class="description">
                     私たちは、「旅行が好き」「人が好き」という気持ちを大切にしながら、スタッフ一人ひと
                     りが前向きに活躍できる環境を整えています。
                     </p>
+                    <br>
                     <p class="description">
                     その核となるのが正当な評価制度です。創業当初から“がんばった人が正しく報われる
                     仕組み”を重視し、大手企業と並ぶ水準の制度を確立しました。この姿勢に共感し、大手
                     から転職してきたスタッフも増え、会社の成長を力強く支えています。
                     </p>
                 </div>
+                </div>
+                <!-- Right -->
+               
 
                 </div>
             </div>
+                  </div>
 
               <!-- SLIDER -->
               <div class="card-wrapper swiper mySwiper sm-hide">
@@ -712,9 +742,10 @@
               </div>
 
               <!-- NAVIGATION -->
-              <div class="slider-nav sm-hide">
-              <button id="prev" class="swiper-button-prev"></button>
-              <button id="next" class="swiper-button-next"></button>
+              <div class="control-box sm-hide">
+                <div class="icon arrow-left" id="prev">&lt;</div>
+                <div class="icon divider">|</div>
+                <div class="icon arrow-right" id="next">&gt;</div>
               </div>
               
               <!-- mobile slider -->
@@ -900,11 +931,14 @@
               </div>
 
               <!-- NAVIGATION -->
-              <div class="scroll-controls" style="padding: 16px;">
-            <button class="scroll-btn left" aria-label="Scroll left">‹</button>
-            <button class="scroll-btn right" aria-label="Scroll right">›</button>
-            </div>
+          <div style="display: flex; width: 100%; justify-content: flex-end; padding: 16px; ">
 
+            <div class="control-box md-hide scroll-controls" >
+                <div class="icon arrow-left scroll-btn left" id="prev">&lt;</div>
+                <div class="icon divider">|</div>
+                <div class="icon arrow-right scroll-btn right" id="next">&gt;</div>
+              </div>
+          </div>
         </section>
 
          <!-- service section -->
@@ -915,8 +949,11 @@
         
         <!-- LEFT -->
         <div class="service-left">
+          <div>
           <span>Service</span>
           <h2>事業紹介</h2>
+          </div>
+
           <p>
             どんな旅にも想いがあり、その価値を最大限に引き出すために、
             私たちは確かな提案力と幅広いサービスで、最適な旅を届けます。
@@ -934,7 +971,7 @@
       </div>
     </div>
 
-    <button class="service-btn" style="position: relative; width: fit-content;">
+    <button class="service-btn" style="position: relative; ">
       詳しく見る 
       <span class="arrow" style="position: absolute; right: 16px; top: 48%; transform: translateY(-50%);">→</span>
 
@@ -972,7 +1009,10 @@
                                 2026年の東京発／大阪発のGW海外ツアーの取り扱いを開始いたしました
                             </div>
                             </div>
+                            <div style="width:100%;display: flex; justify-content: flex-end;">
                             <div class="pr-arrow">→</div>
+
+                            </div>
                         </div>
 
                         <div class="pr-row">
@@ -982,7 +1022,10 @@
                                 学生旅行のプロモーションを開始いたしました
                             </div>
                             </div>
+                            <div style="width:100%;display: flex; justify-content: flex-end;">
+
                             <div class="pr-arrow">→</div>
+                            </div>
                         </div>
 
                         <div class="pr-row">
@@ -992,7 +1035,10 @@
                                 年末年始休業のお知らせあああああああああああああああああああああ…
                             </div>
                             </div>
+                            <div style="width:100%;display: flex; justify-content: flex-end;">
+
                             <div class="pr-arrow">→</div>
+                            </div>
                         </div>
 
                     </div>
@@ -1003,7 +1049,7 @@
                   </div>
                   
                 </section>
-                 <button class="pr-viewall-btn md-hide" style="position:relative; display:flex; width: fit-content; margin-top: 40px; margin:40px auto 0px;">
+                 <button class="pr-viewall-btn md-hide" style="position:relative; justify-content: center; display:flex; margin-top: 40px; margin:40px auto 0px;">
                         すべて見る <span class="arrow" style="position: absolute; right: 16px; top: 48%; transform: translateY(-50%);">→</span>
                         </button>
             </section>
@@ -1011,7 +1057,7 @@
     </main>
     </div>
     <footer class="footer-bg">
-      <div class="site-wrapper">
+      <div class="site-wrapper" style="max-width:1210px; margin: 0 auto;">
         <!-- footer -->
         <section class="footer">
                 <footer class="site-footer">
@@ -1379,7 +1425,7 @@ window.addEventListener("load", function() {
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   document.body.classList.add("no-scroll");
-
+  const heroNav = document.querySelector(".hero-nav");
   const brand = document.querySelector(".brand");
   const jpText = document.querySelector(".jp-text");
   const heroImage = document.querySelector(".hero-image");
@@ -1393,7 +1439,8 @@ document.addEventListener("DOMContentLoaded", () => {
   setTimeout(() => {
     if (brand) brand.style.opacity = 1;
     if (jpText) jpText.style.opacity = 1;
-  }, 100);
+    if (heroNav) heroNav.style.opacity = 1;
+  }, 150);
 
   /* =============================
      Pause so JP text is readable
@@ -1469,7 +1516,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     hero.appendChild(jpText);
   }, 4000);
-    window.addEventListener("resize", () => location.reload());
 });
 </script>
 
