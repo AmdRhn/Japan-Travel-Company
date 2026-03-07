@@ -2372,6 +2372,7 @@ overflow-x: visible;
   gap: 30px;
   position:relative;
   top:-100px;
+  padding-left: 36px;
   left:0%;
 }
 
