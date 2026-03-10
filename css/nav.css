@@ -38,15 +38,15 @@ body {
  list-style: none;
 
  /* text scales properly */
- font-size: clamp(12px, 1vw, 18px);
- font-weight: 500;
+ font-size: clamp(12px, 1vw, 12px);
+ font-weight: 400;
  line-height: 1.2;
  white-space: nowrap;
 }
 
 /* BUTTON */
 .hero-nav button {
- background: #0b8f7a;
+ background: #00877E;
  color: #fff;
  border: none;
 
@@ -97,7 +97,7 @@ body {
 }
 
 .brand img {
- width: 50%;
+ width: 40%;
  height: auto;
 }
 @media (min-width: 2000px) {

@@ -113,7 +113,7 @@ opacity: 0;
   pointer-events: none;
   will-change: transform, opacity;
 
-  font-size: clamp(18px, 3vw, 34px);
+  font-size: clamp(18px, 3vw, 28px);
   letter-spacing: 0.14em;
   font-weight: 500;
   line-height: 1.1;
@@ -177,8 +177,8 @@ opacity: 0;
   transition: opacity 2s cubic-bezier(0.25, 1, 0.5, 1);
 }
 .hero-content img {
-  height: clamp(200px, 37vh, 500px);
-  width: auto;
+  height: clamp(135px, 35vh, 500px);
+  width: fit-content;
   max-width: 75%;
 }
 
@@ -415,6 +415,7 @@ opacity: 0;
   .hero-content img {
     padding-top: 40px;
     width: 60% ;
+    height: fit-content;
   }
 
   .jp-text {
@@ -503,7 +504,7 @@ opacity: 0;
     padding: 100px 40px;
   z-index: 10;
   background: transparent;
-  margin: 40px auto 40px auto;
+  margin: 0px auto 40px auto;
 }
 
 .message-inner {
@@ -519,7 +520,7 @@ opacity: 0;
 
 /* TEXT */
 .message-text p {
-  font-size: 20px;
+  font-size: 18px;
   line-height: 2.2;
   margin-bottom: 38px;
   color: #000;
@@ -601,7 +602,7 @@ opacity: 0;
 
 .achievement-section {
   width: 100%;
-  padding: 0px 0 120px;
+  padding: 0px 0 40px;
   background: #fff;
   position: relative;
   font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
@@ -673,9 +674,9 @@ GROWTH
    .growth-box {
   width: 1100px;
   height: 596px;
-  background: #008a7c;
+  background: #00877E;
   border-radius: 0px 28px 28px 0px;
-  padding: 60px 60px 60px 0px;
+  padding: 40px 60px 60px 0px;
   position: relative;
   overflow: visible; /* allow bleed */
   
@@ -687,7 +688,7 @@ GROWTH
   right: 100%;
   width: 100vw;
   height: 100%;
-  background: #008a7c;
+  background: #00877E;
   z-index: -1;
 }
 
@@ -707,9 +708,9 @@ GROWTH
 }
 
 .subtitle {
-  font-size: 18 px;
-  opacity: 0.8;
-  color: #fff
+  font-size: 18px;
+  /* opacity: 0.8; */
+  color: #b4b4b4;
 }
 
 .growth-left h2 {
@@ -818,13 +819,13 @@ GROWTH
 .swiper-button-next:after,
 .swiper-button-prev:after{
   font-size: 18px!important;
-  color: #008a7c;
+  color: #00877E;
 }
 
 
 .slider-nav .active {
-  color: #008a7c;
-  border-color: #008a7c;
+  color: #00877E;
+  border-color: #00877E;
 }
 .card-content.detailed {
   padding: 24px;
@@ -841,14 +842,14 @@ GROWTH
 }
 
 .card-content.detailed h4 {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
-  color: #008a7c;
+  color: #00877E;
   margin-bottom: 10px;
 }
 
 .card-content.detailed p {
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.7;
   color: #333;
   margin-bottom: 6px;
@@ -1004,8 +1005,9 @@ SERVICE
 
     /* LEFT */
     .service-left span {
-      font-size: 14px;
-      opacity: 0.8;
+      font-size: 18px;
+      /* opacity: 0.8; */
+      color: #b4b4b4;
     }
     .service-left {
         height: 100%;
@@ -1057,7 +1059,7 @@ SERVICE
     /* BUTTON */
     .service-btn {
       width: 218px;
-      margin: 40px auto 80px;
+      margin: 40px auto 120px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1565,7 +1567,7 @@ SERVICE
   content: "•";
   position: absolute;
   left: 0;
-  color: #2a8f7b;
+  color: #00877E;
  font-size: 20px;
   border-radius: 50%;
 }
@@ -1771,7 +1773,7 @@ SERVICE
   margin-top: 40px;
   left: calc(127px + 30px); /* center of timeline column */
   top: 0;
-  width: 2px;
+  width: 1px;
   height: 80%;
   background: #222;
 }
@@ -1786,7 +1788,7 @@ SERVICE
 
 /* Date */
 .timeline-date {
-  font-size: 14px;
+  font-size: 17px;
   color: #999;
   text-align: left;
   padding-right: 20px;
@@ -1798,7 +1800,7 @@ SERVICE
   width: 15px;
   height: 15px;
   background: #ffffff;
-  border: 2px solid #00a3a3;
+  border: 2px solid #00877E;
   border-radius: 50%;
   position: relative;
   margin-top: 5px;
@@ -1812,15 +1814,15 @@ SERVICE
   left: 100%;
   top: 60%;
   width: 80px;
-  height: 2px;
-  background: #00a3a3;
+  height: 1px;
+  background: #00877E;
   transform: translateY(-50%);
 }
 
 /* Content */
 .timeline-content {
   padding-left: 48px;
-  font-size: 18px;
+  font-size: 17px;
   line-height: 1.8;
   color: #000;
 }
@@ -1911,7 +1913,7 @@ SERVICE
     width: 12px;
     height: 12px;
     background: #fff;
-    border: 2px solid #00a3a3;
+    border: 2px solid #00877E;
     border-radius: 50%;
     z-index: 2;
   }
@@ -1924,7 +1926,7 @@ SERVICE
     left: 10px;
     width: 18px;
     height: 1px;
-    background: #00a3a3;
+    background: #00877E;
     transform: translateY(-50%);
   }
 
@@ -2193,10 +2195,10 @@ SERVICE
 /* Auto scroll animation */
 @keyframes scroll {
   from {
-    transform: translateX(-50%);
+    transform: translateX(0);
   }
   to {
-    transform: translateX(0);
+    transform: translateX(-50%);
   }
 }
 
@@ -2213,7 +2215,7 @@ SERVICE
   background: #ffffff;
  padding: 0px 0px 0px 60px;
 overflow-x: visible;
- margin-top:-120px;
+ margin-top:-74px;
 }
 .section-three{
   background: #ffffff;
@@ -2253,7 +2255,7 @@ overflow-x: visible;
   padding: 50px 0px 50px 50px;
   display: flex;
   width: 1100px;
-  height: 550px;
+  height: 480px;
   margin-left:auto;
   margin-top: 4%;
   gap: 30px;
@@ -2358,20 +2360,31 @@ overflow-x: visible;
   object-fit: cover;
   border-radius: 30px;
 }
+.image2 {
+  transform: translate(0px, -20px);
+}
 /* Bottom cards */
 .bottom-cards {
   display: flex;
   justify-content: flex-end;
   gap: 30px;
   position:relative;
-  top:-140px;
+  top:-94px;
+  /* left:10%; */
+}
+.bottom-cards-third {
+  display: flex;
+  justify-content: flex-end;
+  gap: 30px;
+  position:relative;
+  top:-126px;
   /* left:10%; */
 }
 .bottom-cards-left {
   display: flex;
   gap: 30px;
   position:relative;
-  top:-100px;
+  top:-114px;
   padding-left: 36px;
   left:0%;
 }
@@ -2379,7 +2392,7 @@ overflow-x: visible;
 .green-card {
   position: relative;
   width:230px;
-  background: #007f73;
+  background: #00877E;
   color: #ffffff;
   border-radius: 16px;
   padding: 28px 24px;
@@ -2438,11 +2451,11 @@ overflow-x: visible;
 /* Hover effect (same premium feel) */
 .green-card:hover .arrow {
   background: #ffffff;
-  color: #007f73;
+  color: #00877E;
 }
 .btn-center-3 {
   text-align: center;
-  margin-top: -100px;
+  margin-top: -80px;
 }
 .scroll-controls {
   display: none;
@@ -2529,6 +2542,9 @@ overflow-x: visible;
     object-fit: cover;
     border-radius: 20px;
   }
+  .image2 {
+  transform: translate(0px, 0px);
+}
   .outline-btn {
     margin-top: 20px;
   }
@@ -2562,7 +2578,8 @@ overflow-x: visible;
 
   /* GREEN CARD SCROLL */
   .bottom-cards,
-  .bottom-cards-left {
+  .bottom-cards-left,
+  .bottom-cards-third {
     position: relative;
     display: flex;
     justify-content: flex-start;
@@ -2577,6 +2594,7 @@ overflow-x: visible;
 
   .bottom-cards::-webkit-scrollbar,
   .bottom-cards-left::-webkit-scrollbar,
+  .bottom-cards-third::-webkit-scrollbar,
   .card-wrapper::-webkit-scrollbar 
    {
     display: none;
@@ -2605,6 +2623,7 @@ overflow-x: visible;
 
   /* REMOVE DESKTOP OFFSETS */
   .bottom-cards,
+  .bottom-cards-third,
   .bottom-cards-left {
     top: 0;
     left: 0;
@@ -2663,9 +2682,9 @@ overflow-x: visible;
   }
 
   .scroll-btn:hover {
-    background: #007f73;
+    background: #00877E;
     color: #fff;
-    border-color: #007f73;
+    border-color: #00877E;
   } */
 }
 @media (max-width: 768px) {
@@ -2920,19 +2939,21 @@ overflow-x: visible;
 .timeline {
   max-width: 900px;
   margin-left: 60px;
+  margin-top:12px
 }
 
 .timeline-item {
   display: flex;
   align-items: flex-start;
   gap: 40px;
-  padding: 28px 0;
+  padding: 23px 0;
 }
 @media (max-width: 768px) {
 
   .timeline {
     margin-left: 0;
     padding-left: 72px;
+    margin: top 0;
     
   }
 
@@ -2951,8 +2972,8 @@ overflow-x: visible;
 .timeline-date {
   position: relative;
   bottom: -3px;
-  font-size: 14px;
-  font-weight: 100;
+  font-size: 17px;
+  
   color: #000000;
   min-width: 110px;
   flex-shrink: 0;
@@ -3486,8 +3507,8 @@ overflow-x: visible;
  .edge-line {
   position: relative;
   width: 100vw;
-  height: 2px;
-  background: #d9d9d9;
+  height: 1px;
+  background: #787878;
   margin: 40px 0;
 
   left: 50%;
@@ -3503,7 +3524,7 @@ overflow-x: visible;
   top: -1px;
   width: 60px;
   height: 3px;
-  background: #666;
+  background: #787878;
 }
 
 @media (max-width: 768px) {
@@ -3548,7 +3569,7 @@ overflow-x: visible;
             position: relative;
             margin-left: 91%;
             margin-top: 30px;
-            margin-bottom: 80px;
+            margin-bottom: 60px;
         }
 
         /* Arrows and Pipe styling */
