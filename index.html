@@ -274,6 +274,7 @@
                 <p class="small">Why Choose Us</p>
                 <h2>私たちが<br />選ばれる理由</h2>
                 </div>
+                 <!-- <div class="sm-pl-4"> -->
 
                 <!-- Main Card -->
                 <div class="main-card">
@@ -296,6 +297,8 @@
                     <img src="images/standerd.png" alt="team" />
                 </div>
                 </div>
+                  <!-- </div> -->
+
             </div>
 
             <!-- Bottom Cards -->
@@ -336,6 +339,8 @@
       <section class="section-two">
           <div class="why-container">
                 <!-- Main Card -->
+                 <!-- <div class="sm-pr-4"> -->
+
                 <div class="main-card-left">
                 <span class="count-left">02</span>
 
@@ -356,6 +361,8 @@
                         <img src="images/w2.jpeg" alt="team" />
                 </div>
                 </div>
+                 <!-- </div> -->
+
           </div>
 
           <!-- Bottom Cards -->
@@ -381,7 +388,7 @@
                     <div class="arrow">→</div>
                 </div>
           </div>
-          <div style="display: flex; width: 100%; justify-content: flex-end; ">
+          <div style="display: flex; width: 100%; justify-content: flex-end; " class="sm-pr-4">
 
                 <div class="control-box md-hide scroll-controls">
                 <div class="icon arrow-left scroll-btn left" id="prev">&lt;</div>
@@ -395,6 +402,8 @@
           <div class="why-container">
                 <!-- Left Title -->
                 <!-- Main Card -->
+                 <!-- <div class="sm-pl-4"> -->
+
                 <div class="main-card">
                     <span class="count-3">03</span>
 
@@ -414,6 +423,8 @@
                         <img src="images/w1.jpeg" alt="team" />
                     </div>
                 </div>
+                 <!-- </div> -->
+
           </div>
 
           <!-- Bottom Cards -->
@@ -1542,7 +1553,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const gap = 12;
     const targetTop = imgRect.top - jpRect.height - gap;
     const moveY = targetTop - jpRect.top;
-
     // ✅ use CSS variable instead of overwriting transform
     jp.style.setProperty("--jp-dy", `${moveY}px`);
     jp.classList.add("move-vertical");

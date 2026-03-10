@@ -56,6 +56,9 @@ background: #000000;
     width: 100%;       /* responsive on mobile */
     padding: 0 0px;
   }
+   .service-section {
+    padding-top: 40px;
+  }
 }
 
 /* OUTSIDE BACKGROUND */
@@ -371,6 +374,7 @@ opacity: 0;
   top:100%;
   bottom: 0px;
   }
+ 
 }
 
 /* NAVBAR */
@@ -403,6 +407,10 @@ opacity: 0;
     width: 100%;
 
   }
+
+  .hero-image {
+    height: 74vh;
+  }
  
   .hero-image img {
     width: 100%;
@@ -414,7 +422,7 @@ opacity: 0;
   }
   .hero-content img {
     padding-top: 40px;
-    width: 60% ;
+    width: 65% ;
     height: fit-content;
   }
 
@@ -580,7 +588,7 @@ opacity: 0;
 
   .message-text p {
     font-size: 14px; /* smaller font for mobile */
-    line-height: 1.8;
+    line-height: 2.2;
     margin-bottom: 20px;
   }
 
@@ -947,7 +955,7 @@ GROWTH
   }
 
   .card-content.detailed h3 {
-    font-size: 16px;
+    font-size: 20px;
     margin-bottom: 16px;
   }
 
@@ -1096,7 +1104,7 @@ SERVICE
 
   /* CARD */
   .service-card {
-    padding: 24px 20px;
+   padding: 24px 20px 32px;
     border-radius: 22px;
   }
 
@@ -1108,12 +1116,12 @@ SERVICE
 
   /* LEFT TEXT */
   .service-left span {
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .service-left h2 {
-    font-size: 26px;
-    margin: 8px 0 14px;
+    font-size: 32px;
+    margin: 8px 0 20px;
     letter-spacing: 1px;
   }
 
@@ -1145,7 +1153,7 @@ SERVICE
   .service-btn {
     width: 218px;
     height: 48px;
-    margin: 32px auto 60px;
+    margin: 32px auto 84px;
     font-size: 14px;
     justify-content: center;
   }
@@ -1349,16 +1357,16 @@ SERVICE
 
       .pr-sidebar {
         border-right: none;
-        border-bottom: 1px solid #999;
+        border-bottom: none;
       }
     }
     @media (max-width: 768px) {
 
   /* SECTION */
-  .pr-section {
+  /* .pr-section {
     border-top: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
-  }
+  } */
   .pr-section .inner {
     width: 100%;
     max-width: 100%;
@@ -1374,7 +1382,7 @@ SERVICE
   .pr-sidebar {
     padding: 24px 16px 20px;
     border-right: none;
-    border-bottom: 1px solid #ddd;
+    border-bottom: none;
   }
 
   .pr-label {
@@ -1416,7 +1424,7 @@ SERVICE
     transform: translateX(-50%);
     width: 100vw;
     height: 1px;
-    background: #ddd;
+    background: #999;
     pointer-events: none;
   }
 
@@ -1898,7 +1906,7 @@ SERVICE
     left: -72px;
     /* top: 6px;               align with dot */
     width: 64px;
-    font-size: 14px;
+    font-size: 14px !important;
     font-weight: 500;
     color: #9a9a9a;
     text-align: left;
@@ -2051,6 +2059,7 @@ SERVICE
     width: 100%;
     border-radius: 0; /* remove rounded corners for simplicity */
     position: relative;
+    height: 500px;
   }
 
   .travel-image img {
@@ -2070,6 +2079,7 @@ SERVICE
     /* padding: 5px 10px; */
     border-radius: 8px;
     z-index: 2;
+    font-weight: 600;
     display: block;
   }
 
@@ -2088,9 +2098,9 @@ SERVICE
 
   .en-small {
     position: relative;
-    top: -40px;
+    top: -56px;
     font-size: 16px;
-    margin-bottom: 15px;
+    margin-bottom:0px;
   }
 
   .travel-content h2 {
@@ -2098,7 +2108,7 @@ SERVICE
     top: -40px;
     font-weight: 100;
     font-size: 28px;
-    margin-bottom: 16px;
+    margin-bottom: 0px;
   }
 
   .travel-content p {
@@ -2106,11 +2116,11 @@ SERVICE
     top: -20px;
     font-size: 14px;
     line-height: 2;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
   }
 
   .travel-btn {
-    padding: 10px 44px;
+    padding: 13px 44px;
     font-size: 13px;
   }
 
@@ -2119,29 +2129,43 @@ SERVICE
   }
   .carsoule-portion{
     padding-top: 40px;
-    padding-bottom: 40px;
+    padding-bottom: 40px !important;
     margin-top: 0px!important;
 }
 
 .card {
-  min-width: 220px !important;
+  min-width: 175px !important;
   border-radius: 20px;
   overflow: hidden;
   transition: transform 0.3s ease;
 }
 .card:nth-child(3n + 1) {
-  height: 220px !important;
+  height: 175px!important;
   transform: translateY(30%);
 }
 
 .card:nth-child(3n + 2) {
-  height: 300px !important;
+  height: 265px !important;
   transform: translateY(0);
 }
 
 .card:nth-child(3n + 3) {
-  height: 260px !important;
+  height: 220px !important;
   transform: translateY(30px);
+}
+.slider {
+  display: flex;
+  gap: 10px !important;
+  animation: scroll 10s linear infinite !important;
+}
+/* Auto scroll animation */
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
 }
 }
 
@@ -2192,7 +2216,8 @@ SERVICE
   transform: translateY(30px);
 }
 
-/* Auto scroll animation */
+
+
 @keyframes scroll {
   from {
     transform: translateX(0);
@@ -2201,9 +2226,6 @@ SERVICE
     transform: translateX(-50%);
   }
 }
-
-
-
 
 .section-one{
   background: #ffffff;
@@ -2466,10 +2488,10 @@ overflow-x: visible;
   .section-one,
   
   .section-three {
-    padding: 40px 0px 0px 16px;
+    padding: 40px 0px 0px 0px;
   }
   .section-two{
-    padding: 40px 16px 16px 0px;
+    padding: 40px 0px 16px 0px;
   }
   .section-two,.section-three {
     margin-top: 0px;
@@ -2565,7 +2587,7 @@ overflow-x: visible;
   /* CONTENT */
   .content h3 {
   margin-top: 0px;
-    font-size: 22px;
+    font-size: 20px;
     margin-bottom: 12px;
   }
 
@@ -2585,7 +2607,7 @@ overflow-x: visible;
     justify-content: flex-start;
     gap: 14px;
     overflow-x: auto;
-    padding: 10px 4px 20px;
+    padding: 10px 8px 20px;
     margin-top: -30px;
 
     scroll-snap-type: x mandatory;
@@ -2610,6 +2632,7 @@ overflow-x: visible;
     }
   .green-card p {
     line-height: 1.5;
+    font-size: 15px;
   }
 
   .green-card .arrow {
@@ -2694,12 +2717,18 @@ overflow-x: visible;
     flex-direction: column;
     gap: 24px;
   }
-
+  .sm-pl-4{
+    padding-left: 16px;
+  }
+   .sm-pr-4{
+    padding-right: 16px;
+  }
   /* MOVE TITLE TO TOP */
   .left-title {
     position: relative;
     top: -40px;
     order: -1;   /* 👈 forces it to top */
+    padding-left:16px;
   }
 
   /* MAIN CARD BELOW TITLE */
@@ -3532,11 +3561,15 @@ overflow-x: visible;
     left: 20px !important;
     width: 40px !important;
     height: 2px !important;
+        top: 1px !important;
   }
   .edge-line{
     height: 1px !important;
   }
 
+  .left-title .small {
+    font-size: 14px !important;
+  }
   .control-box {
             display: inline-flex;
             align-items: center;
