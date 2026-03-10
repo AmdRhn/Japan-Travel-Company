@@ -2716,6 +2716,7 @@ overflow-x: visible;
   .why-container {
     flex-direction: column;
     gap: 24px;
+    /* padding-left: 16px; */
   }
   .sm-pl-4{
     padding-left: 16px;
