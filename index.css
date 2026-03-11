@@ -9,7 +9,18 @@ body.is-locked {
   height: 100%;
   overflow: hidden;
 }
+::-webkit-scrollbar {
+  width: 6px;
+}
 
+::-webkit-scrollbar-thumb {
+  background: #b9bbbb;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
 body {
    font-family: "Roboto", "Noto Sans JP", sans-serif;
    overflow-x: hidden;
@@ -1140,10 +1151,10 @@ SERVICE
 
   .service-box {
     padding: 20px 12px;
-    font-size: 14px;
-    border-radius: 14px;
+    font-size: 14.5px;
+    border-radius: 10px;
     text-align: center;
-    height: 82px;
+    height: 90px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2729,7 +2740,7 @@ overflow-x: visible;
     position: relative;
     top: -40px;
     order: -1;   /* 👈 forces it to top */
-    padding-left:16px;
+    /* padding-left:16px;ser */
   }
 
   /* MAIN CARD BELOW TITLE */
@@ -3551,7 +3562,7 @@ overflow-x: visible;
 .edge-line .edge-dash {
   position: absolute;
   left: calc((100vw - 1210px) / 2 + 20px) !important;
-  top: -1px;
+  /* top: -1px; */
   width: 60px;
   height: 3px;
   background: #787878;
