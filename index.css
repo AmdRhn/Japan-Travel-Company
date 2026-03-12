@@ -420,7 +420,7 @@ opacity: 0;
   }
 
   .hero-image {
-    height: 74vh;
+    height: 74dvh;
   }
  
   .hero-image img {
@@ -543,7 +543,7 @@ opacity: 0;
   line-height: 2.2;
   margin-bottom: 38px;
   color: #000;
-  letter-spacing: 0.14em;
+  letter-spacing: 4.48%;
 }
 .message-text p {
   color: #000;
@@ -749,11 +749,11 @@ GROWTH
   font-size: 16px;
   line-height: 1.8;
   max-width: 700px;
-}
+} 
 
     /* ===== SLIDER WRAPPER ===== */
     .card-wrapper {
-      margin-top: -300px;
+      margin-top: -310px;
       margin-left: 100px;          /* ✅ KEEP THIS */
       overflow: hidden;
       width: 1210px;
@@ -2417,7 +2417,7 @@ overflow-x: visible;
   display: flex;
   gap: 30px;
   position:relative;
-  top:-114px;
+  top:-126px;
   padding-left: 36px;
   left:0%;
 }
