@@ -1625,8 +1625,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const imgRect = img.getBoundingClientRect();
 
     const gap = 12;
-    const targetTop = imgRect.top - jpRect.height - gap;
+    const extraLift = 6; // Move jp text a bit more upward on mobile.
+    const targetTop = imgRect.top - jpRect.height - gap + extraLift;
     const moveY = targetTop - jpRect.top;
+    
     // ✅ use CSS variable instead of overwriting transform
     jp.style.setProperty("--jp-dy", `${moveY}px`);
     jp.classList.add("move-vertical");
@@ -1653,7 +1655,8 @@ document.addEventListener("DOMContentLoaded", () => {
       } else {
         // For why-choose sections, look for bottom-cards
         cardContainer = section.querySelector(".bottom-cards") || 
-                        section.querySelector(".bottom-cards-left");
+                        section.querySelector(".bottom-cards-left") ||
+                        section.querySelector(".bottom-cards-third");
       }
     }
 
@@ -1664,6 +1667,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (current.nodeType === 1) { // Element nodes only
           if (current.classList.contains("bottom-cards") || 
               current.classList.contains("bottom-cards-left") ||
+              current.classList.contains("bottom-cards-third") ||
               current.classList.contains("card-wrapper")) {
             cardContainer = current;
             break;
@@ -1683,25 +1687,70 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!leftBtn || !rightBtn) return;
 
-    // Adjust scroll amount based on container type
-    const isCardWrapper = cardContainer.classList.contains("card-wrapper");
-    const scrollAmount = isCardWrapper ? 300 : 220;
+    const isBottomCardRail =
+      cardContainer.classList.contains("bottom-cards") ||
+      cardContainer.classList.contains("bottom-cards-left") ||
+      cardContainer.classList.contains("bottom-cards-third");
+
+    if (!isBottomCardRail) return;
+
+    const getSnapPoints = () => {
+      const containerRect = cardContainer.getBoundingClientRect();
+
+      return Array.from(cardContainer.querySelectorAll(":scope > .green-card")).map((card) => {
+        const cardRect = card.getBoundingClientRect();
+        return Math.round(cardContainer.scrollLeft + (cardRect.left - containerRect.left));
+      });
+    };
+
+    const scrollToPoint = (targetLeft) => {
+      cardContainer.scrollTo({
+        left: targetLeft,
+        behavior: "smooth"
+      });
+    };
+
+    const updateButtonState = () => {
+      const maxScrollLeft = Math.max(0, cardContainer.scrollWidth - cardContainer.clientWidth);
+      const currentLeft = Math.round(cardContainer.scrollLeft);
+      const atStart = currentLeft <= 4;
+      const atEnd = currentLeft >= maxScrollLeft - 4;
+
+      leftBtn.classList.toggle("is-disabled", atStart);
+      rightBtn.classList.toggle("is-disabled", atEnd);
+      leftBtn.setAttribute("aria-disabled", String(atStart));
+      rightBtn.setAttribute("aria-disabled", String(atEnd));
+    };
 
     leftBtn.addEventListener("click", (e) => {
       e.preventDefault();
-      cardContainer.scrollBy({
-        left: -scrollAmount,
-        behavior: "smooth"
-      });
+
+      if (leftBtn.classList.contains("is-disabled")) return;
+
+      const snapPoints = getSnapPoints();
+      const currentLeft = Math.round(cardContainer.scrollLeft);
+      const previousPoint = [...snapPoints].reverse().find((point) => point < currentLeft - 4);
+
+      scrollToPoint(previousPoint ?? 0);
     });
 
     rightBtn.addEventListener("click", (e) => {
       e.preventDefault();
-      cardContainer.scrollBy({
-        left: scrollAmount,
-        behavior: "smooth"
-      });
+
+      if (rightBtn.classList.contains("is-disabled")) return;
+
+      const snapPoints = getSnapPoints();
+      const currentLeft = Math.round(cardContainer.scrollLeft);
+      const nextPoint = snapPoints.find((point) => point > currentLeft + 4);
+
+      if (typeof nextPoint === "number") {
+        scrollToPoint(nextPoint);
+      }
     });
+
+    cardContainer.addEventListener("scroll", updateButtonState, { passive: true });
+    window.addEventListener("resize", updateButtonState);
+    updateButtonState();
   });
 });
 </script>

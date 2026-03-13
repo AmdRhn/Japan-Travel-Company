@@ -397,6 +397,9 @@ opacity: 0;
  margin:0 auto;
 }
 @media screen and (max-width: 768px) {
+  .scroll-vertical {
+    top: 72px;
+  }
   .scroll-vertical .text {
     display: none;
     animation: blinkText 1.6s ease-in-out infinite;
@@ -523,7 +526,7 @@ opacity: 0;
     padding: 100px 40px;
   z-index: 10;
   background: transparent;
-  margin: 0px auto 40px auto;
+  margin: 0px auto 60px auto;
 }
 
 .message-inner {
@@ -604,7 +607,7 @@ opacity: 0;
   }
 
   .message-btn-wrap {
-    margin-top: 20px; /* remove negative margin */
+    margin-top: 42px; /* remove negative margin */
     justify-content: center; /* center button on mobile */
   }
 
@@ -877,7 +880,7 @@ GROWTH
 
   /* ===== GREEN CONTAINER ===== */
   .growth-box {
-    width: 90%;
+    width: 94%;
     height: 718px;
     padding: 32px 16px;
     border-radius: 0px 24px 24px 0px;
@@ -903,7 +906,7 @@ GROWTH
   }
 
   .growth-left h2 {
-    font-size: 26px;
+    font-size: 32px;
     line-height: 1.4;
   }
 
@@ -966,7 +969,7 @@ GROWTH
   }
 
   .card-content.detailed h3 {
-    font-size: 20px;
+    font-size: 17px;
     margin-bottom: 16px;
   }
 
@@ -1398,11 +1401,11 @@ SERVICE
   }
 
   .pr-label {
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .pr-heading {
-    font-size: 26px;
+    font-size: 32px;
     margin: 10px 0 16px;
   }
 
@@ -2071,7 +2074,7 @@ SERVICE
     width: 100%;
     border-radius: 0; /* remove rounded corners for simplicity */
     position: relative;
-    height: 500px;
+    height: 480px;
   }
 
   .travel-image img {
@@ -2082,7 +2085,7 @@ SERVICE
   /* JP SMALL ON IMAGE */
   .jp-small {
     position: relative;
-    top: -90px;
+    top: -75px;
     left: -5%;
     font-size: 20px;
     color: #fff; 
@@ -2111,7 +2114,7 @@ SERVICE
   .en-small {
     position: relative;
     top: -56px;
-    font-size: 16px;
+    font-size: 14px;
     margin-bottom:0px;
   }
 
@@ -2119,7 +2122,7 @@ SERVICE
     position: relative;
     top: -40px;
     font-weight: 100;
-    font-size: 28px;
+    font-size: 32px;
     margin-bottom: 0px;
   }
 
@@ -2464,8 +2467,8 @@ overflow-x: visible;
 } */
  .green-card .arrow {
   position: absolute;
-  bottom:20px;   /* adjust */
-  right: 20px;    /* adjust */
+  bottom:12px;   /* adjust */
+  right: 12px;    /* adjust */
 
   width: 28px;
   height: 28px;
@@ -2497,13 +2500,17 @@ overflow-x: visible;
 @media (max-width: 768px) {
 
   /* SECTION PADDING */
-  .section-one,
+  .section-one
+  {
+    padding: 40px 0px 0px 0px;
+
+  }
   
   .section-three {
-    padding: 40px 0px 0px 0px;
+    padding: 60px 0px 0px 0px;
   }
   .section-two{
-    padding: 40px 0px 16px 0px;
+    padding: 76px 0px 16px 0px;
   }
   .section-two,.section-three {
     margin-top: 0px;
@@ -2641,6 +2648,9 @@ overflow-x: visible;
         font-size: 12px;
         min-height: 130px;
         border-radius: 12px;
+        /* scroll-snap-align: start; */
+        scroll-snap-stop: always;
+        
     }
   .green-card p {
     line-height: 1.5;
@@ -2675,7 +2685,7 @@ overflow-x: visible;
   .main-card-left {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 30px;
   }
 
   .main-card .image,
@@ -2697,7 +2707,36 @@ overflow-x: visible;
     display: flex;
     justify-content: flex-end;
     gap: 12px;
-    margin-top: 8px;
+    margin-top: 18px;
+  }
+
+  /* .scroll-controls.control-box {
+    width: 102px !important;
+    height: 40px !important;
+    padding: 8px 12px 10px !important;
+    margin-top: 10px !important;
+    margin-right: 2px;
+    border-radius: 999px;
+    border-color: #d8d8d8;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
+  } */
+
+  .scroll-controls .divider {
+    margin-top: 0;
+  }
+
+  .scroll-controls .scroll-btn {
+    transition: color 0.2s ease, opacity 0.2s ease;
+  }
+
+  .scroll-controls .scroll-btn.left,
+  .scroll-controls .scroll-btn.right {
+    color: #00877E;
+  }
+
+  .scroll-controls .scroll-btn.is-disabled {
+    color: #c8c8c8;
+    pointer-events: none;
   }
 
   /* BUTTON STYLE */
@@ -3657,4 +3696,15 @@ overflow-x: visible;
 
         .arrow-right:hover {
             color: #006b64;
+        }
+
+        .scroll-controls .arrow-left.is-disabled,
+        .scroll-controls .arrow-right.is-disabled {
+          color: #C8C8C8;
+          cursor: default;
+        }
+
+        .scroll-controls .arrow-left:not(.is-disabled):hover,
+        .scroll-controls .arrow-right:not(.is-disabled):hover {
+          color: #006b64;
         }
