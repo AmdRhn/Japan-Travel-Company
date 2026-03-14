@@ -423,7 +423,7 @@ opacity: 0;
   }
 
   .hero-image {
-    height: 74svh;
+    height: 80svh;
   }
  
   .hero-image img {
@@ -2149,23 +2149,23 @@ SERVICE
 }
 
 .card {
-  min-width: 175px !important;
+  min-width: 169px !important;
   border-radius: 20px;
   overflow: hidden;
   transition: transform 0.3s ease;
 }
 .card:nth-child(3n + 1) {
-  height: 175px!important;
+  height: 161px!important;
   transform: translateY(30%);
 }
 
 .card:nth-child(3n + 2) {
-  height: 265px !important;
+  height: 227px !important;
   transform: translateY(0);
 }
 
 .card:nth-child(3n + 3) {
-  height: 220px !important;
+  height: 187px !important;
   transform: translateY(30px);
 }
 .slider {

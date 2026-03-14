@@ -1692,12 +1692,18 @@ document.addEventListener("DOMContentLoaded", () => {
       cardContainer.classList.contains("bottom-cards-left") ||
       cardContainer.classList.contains("bottom-cards-third");
 
-    if (!isBottomCardRail) return;
+    const isGrowthRail =
+      cardContainer.classList.contains("card-wrapper") &&
+      cardContainer.classList.contains("md-hide");
+
+    if (!isBottomCardRail && !isGrowthRail) return;
+
+    const itemSelector = isBottomCardRail ? ":scope > .green-card" : ".growth-card";
 
     const getSnapPoints = () => {
       const containerRect = cardContainer.getBoundingClientRect();
 
-      return Array.from(cardContainer.querySelectorAll(":scope > .green-card")).map((card) => {
+      return Array.from(cardContainer.querySelectorAll(itemSelector)).map((card) => {
         const cardRect = card.getBoundingClientRect();
         return Math.round(cardContainer.scrollLeft + (cardRect.left - containerRect.left));
       });
@@ -1708,6 +1714,21 @@ document.addEventListener("DOMContentLoaded", () => {
         left: targetLeft,
         behavior: "smooth"
       });
+    };
+
+    const getCurrentSnapIndex = (snapPoints, currentLeft) => {
+      let closestIndex = 0;
+      let smallestDistance = Infinity;
+
+      snapPoints.forEach((point, index) => {
+        const distance = Math.abs(point - currentLeft);
+        if (distance < smallestDistance) {
+          smallestDistance = distance;
+          closestIndex = index;
+        }
+      });
+
+      return closestIndex;
     };
 
     const updateButtonState = () => {
@@ -1728,8 +1749,11 @@ document.addEventListener("DOMContentLoaded", () => {
       if (leftBtn.classList.contains("is-disabled")) return;
 
       const snapPoints = getSnapPoints();
+      if (!snapPoints.length) return;
       const currentLeft = Math.round(cardContainer.scrollLeft);
-      const previousPoint = [...snapPoints].reverse().find((point) => point < currentLeft - 4);
+      const currentIndex = getCurrentSnapIndex(snapPoints, currentLeft);
+      const previousIndex = Math.max(0, currentIndex - 1);
+      const previousPoint = snapPoints[previousIndex];
 
       scrollToPoint(previousPoint ?? 0);
     });
@@ -1740,8 +1764,11 @@ document.addEventListener("DOMContentLoaded", () => {
       if (rightBtn.classList.contains("is-disabled")) return;
 
       const snapPoints = getSnapPoints();
+      if (!snapPoints.length) return;
       const currentLeft = Math.round(cardContainer.scrollLeft);
-      const nextPoint = snapPoints.find((point) => point > currentLeft + 4);
+      const currentIndex = getCurrentSnapIndex(snapPoints, currentLeft);
+      const nextIndex = Math.min(snapPoints.length - 1, currentIndex + 1);
+      const nextPoint = snapPoints[nextIndex];
 
       if (typeof nextPoint === "number") {
         scrollToPoint(nextPoint);
