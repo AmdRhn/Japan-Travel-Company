@@ -12,7 +12,7 @@ body {
 /* HERO */
 .hero {
   display: flex;
-  height: 580px;
+  height: 560px;
   position: relative;
   overflow: hidden;
 }
@@ -46,25 +46,41 @@ body {
 /* RIGHT CONTENT */
 .hero-content {
   background: #fff;
-  padding: 160px 20px;
+  top: 80px;
+  padding: 100px 120px;
+  padding-left: calc(50vw - 605px);
   position: relative;
 }
 .hero-content h1 {
-    font-size: 24px;
-    font-weight: 100;
+    font-size: 22px;
+    font-weight: 700;
     color: #008a7c;
+    letter-spacing: -6.25%;
+}
+.hero-content h1::before {
+    content: "● ";
+    color: #008a7c;
+    font-size: 22px;
+    font-weight: 700;
+    position: relative;
+    bottom: 2.5px;
+    margin-right: 3px;
 }
 .hero-content p {
-    font-size: 50px;
-    margin-top: 20px;
-    font-weight: 100;
-    
+    font-size: 51px;
+    /* margin-top: 10px; */
+    font-weight: 700;
+    letter-spacing: 0.39%;
 }
 
 
 .jp-text {
-  font-size: 20px !important;
-  font-weight: 100 !important;
+  font-size: 18px !important;
+  font-weight: 350 !important;
+  letter-spacing: 3.13%;
+  margin-top: 20px;
+  line-height: 34px;
+  max-width: 1034px;
 }
 
 /* .hero-content h1 {
@@ -104,7 +120,7 @@ body {
 @media screen and (max-width: 768px) {
   .hero {
   position: relative;      /* anchor children */
-  height: 100px;           /* full hero section */
+  height: 100%;           /* full hero section */
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -132,29 +148,40 @@ body {
     left: 20px;
     z-index: 999;
   } */
-  .hero-content {
-    top: 300px;
-    left: 10px;
-    position: absolute;
-    width: 100%;
-    padding: 20px 20px;
-  }
+.hero-content {
+  position: relative;   
+  top: 300px;
+  left: 0px;
+  width: 100%;      /* push to bottom */
+  padding: 40px 20px;
+  z-index: 2;
+  border-radius: 0 40px 0 0;
+}
 
 
-  .jp-text {
-    font-size: 14pt !important;
-    width: 100%;
-    color: #666;
-    font-weight: 100 !important;
+
+.jp-text {
+      font-size: 13px !important;
+      width: 100%;
+      color: #000000;
+      font-weight: 400 !important;
+      line-height: 27px;
+      margin-top: 20px;
   }
+
 
   .hero-content h1 {
-    font-size: 18px;
+    font-size: 14px;
+    margin-bottom: 4px;
+
+  }
+  .hero-content h1::before{
+    font-size: 14px;
   }
   .hero-content p {
       font-size: 34px;
-      font-weight: 100;
-    margin-top: 0;
+      /* margin-top: 2px; */
+      font-weight: 700;
       
   }
 
@@ -175,11 +202,12 @@ body {
   display: none;
 } 
 
+
 /* more information */
 .more-about {
   /* RANDOM IMAGE */
   background: url("images/PP_背景_shutterstock_2549439125-min.jpg")
-    center / cover no-repeat;
+    top / cover no-repeat;
   width: 100vw;
   margin-left: calc(-50vw + 50%);
   min-height: 320px;
@@ -187,28 +215,34 @@ body {
   color: #fff;
 }
 
-/* DARK GREEN OVERLAY */
+/* FULL WIDTH DARK GREEN OVERLAY */
 .overlay {
+  position: relative;          /* required for any pseudo-elements later */
   background: rgba(0, 90, 85, 0.75);
-  width: 100%;
-  height: 100%;
-  padding: 100px 0px;
+  width: 100vw;                /* stretch full viewport */
+  margin-left: calc(-50vw + 50%); /* center the section across full screen */
+  padding: 100px 0;
+  box-sizing: border-box;
+  overflow: hidden;            /* prevents horizontal scroll */
 }
 
+/* CENTERED CONTENT */
 .more-container {
-  max-width: 1200px;
-  margin: auto;
+  max-width: 1210px;   /* constrain content */
+  margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 2fr;
-  gap: 60px;
   align-items: baseline;
 }
 
+
+/* TITLE */
 .more-title {
-  font-size: 36px;
-  font-weight: 100;
-  margin-left: 70px;
+  font-size: 38px;
+  font-weight: 700;
+  /* margin-left: 70px; */
   white-space:nowrap;
+  letter-spacing: -6.45%;
 }
 
 /* BUTTON GRID */
@@ -219,23 +253,29 @@ body {
   margin-right: 60px;
 }
 
+
 /* PILL BUTTON */
 /* PILL BUTTON */
 .pill {
-  width: 220px;              /* SAME WIDTH */
-  height: 64px;              /* SAME HEIGHT */
-  border: 2px solid #fff;
+  position: relative;
+  width: 270px;              /* SAME WIDTH */
+  height: 68px;              /* SAME HEIGHT */
+  border: 1px solid #fff;
   border-radius: 999px;
   padding: 0 22px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   color: #fff;
   text-decoration: none;
-  font-size: 15px;
+  text-align: center;
+  font-size: 17px;
   box-sizing: border-box;
+  background-color:rgba(255, 255, 255,0.15);
   transition: all 0.3s ease;
 }
+
+
 /* TEXT */
 .pill-text {
   text-align: center;
@@ -254,13 +294,15 @@ body {
   background: #fff;
   color: #005a55;
 }
-
 /* RESPONSIVE */
 @media (max-width: 600px) {
   .pill {
     width: 100%;        /* full width on mobile */
     max-width: 300px;
     margin: auto;
+            padding: 6px 22px;
+        font-size: 11px !important;
+        height: 48px;
   }
 }
 
@@ -289,7 +331,7 @@ body {
 @media (max-width: 600px) {
   .more-title {
     font-size: 26px;
-    font-weight: 100;
+    font-weight: 700;
     text-align: start;
     margin-left: 20px;
     white-space: nowrap;
@@ -302,7 +344,6 @@ body {
 
   .pill {
     padding: 6px 22px;
-    font-size: 15px;
   }
 }
 
@@ -477,7 +518,9 @@ body {
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
-
+      .pill span{
+      font-size: 13px;
+    }
   /* FOOTER WRAPPER */
   .site-footer {
     padding: 40px 16px 200px;
@@ -908,10 +951,9 @@ body {
 }
 
 .container {
-  max-width: 1300px;
   margin: auto;
   display: grid;
-  grid-template-columns: 220px 1fr;
+  grid-template-columns: 160px 1fr;
   gap: 40px;
 }
 
@@ -930,8 +972,9 @@ body {
   background: #f3fffd;
   color: #1b7f73;
   cursor: pointer;
-  font-size: 14px;
-  text-align: left;
+  font-size: 11px;
+  font-weight: 700;
+  text-align: center;
 }
 
 .tab.active {
@@ -990,11 +1033,14 @@ body {
 }
 
 .more-btn {
-  padding: 14px 40px;
+  position: relative;
+  width: 218px;
+  padding: 13px 40px;
   border-radius: 999px;
   border: 1px solid #000;
   background: #fff;
-  margin-bottom: 30px;
+  margin-bottom: 90px;
+  font-size: 13px;
   cursor: pointer;
 }
 
@@ -1009,13 +1055,25 @@ body {
   .container {
     grid-template-columns: 1fr;
   }
-
+  .more-btn {
+  position: relative;
+  width: 218px;
+  padding: 13px 40px;
+  border-radius: 999px;
+  border: 1px solid #000;
+  background: #fff;
+  margin-bottom: 50px;
+  font-size: 13px;
+  cursor: pointer;
+}
   .tabs {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 14px;
   }
-
+  .more-wrap {
+    margin-top: 0px !important;
+  }
   .tab {
     padding: 4px 20px;
     height: 60px;
@@ -1035,7 +1093,7 @@ body {
 
 .support-section .container {
   display: block;
-  max-width: 1200px;
+  max-width: 1210px;
   margin: auto;
 }
 
@@ -1044,7 +1102,7 @@ body {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1210px;
   margin: auto;
 }
 
@@ -1070,9 +1128,11 @@ body {
   display: inline-block;
   padding: 6px 16px;
   border-radius: 999px;
-  font-size: 12px;
+  font-size: 10px;
+  font-weight: 700;
   border: 1px solid #6fc1b8;
   color: #1b7f73;
+  background-color: #E6F8F6;
 }
 
 .right {
@@ -1146,8 +1206,15 @@ body {
     font-size: 16px;
     margin: 32px 0 16px;
   }
+  .article-section {
+    margin-top: 40px;
 }
-
+.card-grid
+  {
+    
+    gap: 0px;
+}
+}
 /* @media (max-width: 900px) {
   .top {
     flex-direction: column;

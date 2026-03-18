@@ -5,31 +5,76 @@
 .msg-wrapper {
   display: grid;
   position: relative;
-  grid-template-columns: 240px 1fr;
+  grid-template-columns: 160px 1fr;
   gap: 40px;
-  padding-top: 20px;
+  padding-top: 42px;
+  max-width: 1210px;
+  margin: 0 auto;
 }
 
 /* Sidebar */
 .sidebar {
-  background: #f6f7f7;
-  width: 200px;
-  height: 300px;
+  background: #F3F3F3;
+  width: 160px;
+  height: fit-content;
   border-radius: 14px;
-  margin-left: 55px;
-  padding: 20px;
+  margin-left: 0px;
+  padding: 18px;
 }
 
 .sidebar h3 {
   display: flex;
   justify-content: space-between;
-  font-size: 16px;
+  font-size: 14px;
+  align-items: center;
+}
+
+.sidebar-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* gap: 12px; */
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #111;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+}
+
+.sidebar-toggle svg {
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
 }
 
 .sidebar ul {
   list-style: none;
   padding: 0;
-  margin: 20px 0 0;
+  /* margin: 10px 0 0; */
+  font-size: 14px;
+}
+
+.sidebar-menu {
+  max-height: 0;
+  margin-top: 0;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: max-height 0.25s ease, margin-top 0.25s ease, opacity 0.2s ease;
+}
+
+.dropdown-sidebar.is-open .sidebar-menu {
+  max-height: 220px;
+  margin-top: 14px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.dropdown-sidebar.is-open .sidebar-toggle svg {
+  transform: rotate(180deg);
 }
 
 .sidebar li {
@@ -48,12 +93,13 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 32px;
+  row-gap: 50px;
 }
 
 /* Card */
 .msg-card {
   position: relative;
-  padding-bottom: 160px; /* reserve space for card-content */
+  padding-bottom: 100px; /* reserve space for card-content */
 }
 
 .msg-card img {
@@ -82,7 +128,7 @@
 }
 
 .msg-card h4 {
-  font-size: 15px;
+  font-size: 16px;
   margin: 10px 0;
   line-height: 1.6;
 }
@@ -113,14 +159,14 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 24px;
-  padding: 20px;
+ padding: 42px 20px 75px;
 }
 
 /* Sidebar now moves below cards */
 .grid {
   order: 1; /* cards first */
   grid-template-columns: 1fr;
-  gap: 28px;
+  gap: 0px !important;
 }
 
 .sidebar {
@@ -129,12 +175,17 @@
   width: 100%;
   padding: 16px;
   margin-top: 20px;
+  border-radius: 8px;
   margin-left: 0;
+}
+
+.dropdown-sidebar.is-open .sidebar-menu {
+  max-height: 260px;
 }
 
 /* Card layout */
 .msg-card {
-  padding-bottom: 140px;
+  padding-bottom: 120px;
 }
 
 .msg-card img {
@@ -152,7 +203,9 @@
   padding: 16px;
   border-radius: 16px;
 }
-
+.msg-card-content{
+  height: 150px;
+}
 .msg-card small {
   font-size: 11px;
 }
@@ -231,9 +284,11 @@ font-weight: 800;
 }
 
 #backBtn {
-display: block;           /* makes margin auto work */
+  width: 218px;
+display: block;
+position: relative;           /* makes margin auto work */
 margin: 40px auto;        /* top & bottom = 40px, centered horizontally */
-padding: 12px 30px;
+padding: 13px 30px;
 border-radius: 40px;
 border: 1px solid #000;
 background: #fff;

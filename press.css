@@ -2,32 +2,41 @@
     PRESS RELEASE
     ============= */
     .hero {
+      padding: 160px 0px 60px 0px;
       display: flex;
-      height: 280px;
+      height: auto !important;
       position: relative;
       overflow: hidden;
     }
     .hero-content {
     background: #fff;
-    padding: 0px 20px;
+    padding: 0px !important;
     position: relative;
     align-content: end;
     margin-bottom: 20px;
+    top: unset !important;
+  margin-left: calc((100vw - 1210px) / 2);
+
     }
+
     @media (max-width: 786px) {
       .hero {
+            padding: 100px 0px 0px 20px;
         min-height: 200px;
       }
+          .more-wrap{
+      padding-top: 60px!important;
+    }
       .hero-content {
       top: 20px;
       background: #fff;
       position: relative;
+      margin-left: 0px;
       }
     }
    .pr-section {
       max-width: 100%;
       margin: auto;
-      border-top: 1px solid #999;
       border-bottom: 1px solid #999;
     }
 
@@ -110,16 +119,21 @@
       display: flex;
       flex-direction: column;
     }
-
+    .msg-wrapper{
+      gap: 60px !important;
+    }
     /* ONE ROW */
     .pr-row {
       display: grid;
       grid-template-columns: 1fr 60px;
       align-items: center;
-      padding: 32px 40px;
+      padding: 32px 0px;
       border-bottom: 1px solid #999;
     }
 
+    .pr-row:first-child {
+      padding-top: 0;
+    }
     .pr-row:last-child {
       border-bottom: none;
     }
@@ -169,11 +183,18 @@
       }
     }
     @media (max-width: 768px) {
-
+    .msg-wrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 0px 20px 42px 20px !important;
+    }
+    .pill span{
+      font-size: 13px;
+    }
   /* SECTION */
   .pr-section {
-    border-top: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
+    /* border-bottom: 1px solid #ddd; */
   }
 
   /* LAYOUT STACK */
@@ -213,9 +234,12 @@
   /* ROW */
   .pr-row {
     grid-template-columns: 1fr 40px;
-    padding: 18px 16px;
+    padding: 18px 0px;
   }
 
+  .msg-wrapper {
+      gap: 24px !important;
+    }
   /* DATE + TITLE */
   .pr-content {
     gap: 4px;
@@ -235,9 +259,9 @@
   }
 
   /* ARROW */
-  .pr-arrow {
-    width: 32px;
-    height: 32px;
-    font-size: 14px;
-  }
+     .pr-arrow {
+        width: 20px;
+        height: 20px;
+        font-size: 10px;
+    }
 }

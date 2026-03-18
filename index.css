@@ -1489,14 +1489,16 @@ SERVICE
   position: absolute;
   top: 0%;
   right: 0px;
-  background: #e6e6e4;
+  background: #DCDCDC;
   padding: 10px 18px;
   border-radius: 0px 0px 8px 8px;
-  font-size: 13px;
+  font-size: 12.5px;
+  width: 140px;
   display: flex;
+  justify-content: center;
   align-items: center;
   cursor: pointer;
-  gap: 8px;
+  gap: 14px;
 }
 
 /* GRID */
