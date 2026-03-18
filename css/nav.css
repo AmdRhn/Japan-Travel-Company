@@ -111,7 +111,7 @@ body {
 /* MOBILE FIX */
 @media (max-width: 768px) {
  .brand {
-   left: 20px;      
+   left: 14px;      
    width: 50%;    /* reset */
    transform: none;    /* 🔥 REQUIRED */
    top: 12px;
