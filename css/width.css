@@ -2,7 +2,7 @@
 .site-wrapper {
   /* width: 1210px;       
   margin: 0 auto;       */
-  background: #ffffff;
+  background: #ffffff !important;
   /* min-height: 100vh; */
   position: relative;
 }
